@@ -1,4 +1,5 @@
-﻿using TextCopy;
+﻿using System.Text.RegularExpressions;
+using TextCopy;
 
 namespace PasswordGenerator.Business;
 
@@ -32,6 +33,10 @@ public class PasswordGeneratorBusiness
         Console.WriteLine($"Votre mot de passe généré est : {password}");
 
         passwordHistory.Add(password);
+
+        string strength = GetPasswordStrength(password);
+        Console.WriteLine($"Force du mot de passe : {strength}");
+        
         Console.WriteLine();
         Console.Write("Voulez-vous copier ce mot de passe dans le presse-papiers ? (O/N) : ");
         if (Console.ReadLine().ToUpper() == "O")
@@ -130,4 +135,31 @@ public class PasswordGeneratorBusiness
         }
     }
 
+    /// <summary>
+    /// Check the strength of the generated passsword
+    /// </summary>
+    /// <param name="password"></param>
+    /// <returns>A string that contains the result</returns>
+    public static string GetPasswordStrength(string password)
+    {
+        int score = 0;
+
+        if (password.Length >= 8) score++; // Longueur >= 8
+        if (password.Length >= 12) score++; // Longueur >= 12
+
+        if (password.Any(char.IsUpper)) score++;
+
+        if (password.Any(char.IsLower)) score++;
+
+        if (password.Any(char.IsDigit)) score++;
+
+        if (Regex.IsMatch(password, @"[\W_]+")) score++;
+
+        if (score <= 2)
+            return "Faible";
+        else if (score == 3 || score == 4)
+            return "Moyenne";
+        else
+            return "Forte";
+    }
 }
