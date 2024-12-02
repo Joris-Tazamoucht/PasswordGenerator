@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-public class PasswordGenerator
+public class PasswordGeneratorClass
 {
     private static readonly string Lowercase = "abcdefghijklmnopqrstuvwxyz";
     private static readonly string Uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -24,14 +24,5 @@ public class PasswordGenerator
         }
 
         return new string(password);
-    }
-
-    public static void PrintPasswordCriteria()
-    {
-        Console.WriteLine("Options de génération de mot de passe :");
-        Console.WriteLine("1. Longueur du mot de passe");
-        Console.WriteLine("2. Inclusion des majuscules");
-        Console.WriteLine("3. Inclusion des chiffres");
-        Console.WriteLine("4. Inclusion des caractères spéciaux");
     }
 }

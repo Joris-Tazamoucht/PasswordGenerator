@@ -1,31 +1,38 @@
-﻿using TextCopy;
+﻿using PasswordGenerator.Business;
+
 class Program
 {
+
     static void Main(string[] args)
     {
-        Console.WriteLine("Bienvenue dans le générateur de mot de passe !");
-        PasswordGenerator.PrintPasswordCriteria();
-        Console.WriteLine();
+        while (true)
+        {
+            // Menu principal
+            Console.Clear();
+            Console.WriteLine("Générateur de mot de passe");
+            Console.WriteLine("==========================");
+            Console.WriteLine("1. Générer un mot de passe");
+            Console.WriteLine("2. Voir l'historique des mots de passe");
+            Console.WriteLine("3. Quitter");
+            Console.WriteLine();
+            Console.Write("Choisissez une option : ");
+            string choice = Console.ReadLine();
 
-        Console.Write("Entrez la longueur du mot de passe : ");
-        int length = int.Parse(Console.ReadLine());
-
-        Console.Write("Inclure des majuscules ? (O/N) : ");
-        bool includeUppercase = Console.ReadLine().ToUpper() == "O";
-
-        Console.Write("Inclure des chiffres ? (O/N) : ");
-        bool includeDigits = Console.ReadLine().ToUpper() == "O";
-
-        Console.Write("Inclure des caractères spéciaux ? (O/N) : ");
-        Console.WriteLine();
-        bool includeSpecialChars = Console.ReadLine().ToUpper() == "O";
-
-        string password = PasswordGenerator.GeneratePassword(length, includeUppercase, includeDigits, includeSpecialChars);
-
-        Console.WriteLine($"Votre mot de passe généré est : {password} ");
-        Console.WriteLine("Souhaitez vous le copier ? (O/N)");
-        string copyChoice = Console.ReadLine().ToUpper();
-
-        if (copyChoice == "O") ClipboardService.SetText(password);
+            switch (choice)
+            {
+                case "1":
+                    PasswordGeneratorBusiness.GeneratePassword();
+                    break;
+                case "2":
+                    PasswordGeneratorBusiness.ShowHistory();
+                    break;
+                case "3":
+                    return;  // Quitter l'application
+                default:
+                    Console.WriteLine("Choix invalide, veuillez réessayer.");
+                    break;
+            }
+        }
     }
+
 }
