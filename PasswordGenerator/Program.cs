@@ -9,6 +9,14 @@ class Program
         {
             // Menu principal
             Console.Clear();
+            Console.WriteLine(" ####                                                 #   ###                                       " +
+                              "#\r\n #   #                                                #  #   #                                    " +
+                              "  #\r\n #   #   ###    ###    ###   #   #   ###   # ##    ## #  #       ###   # ##    ###   # ##    ###   " +
+                              "####    ###   # ##\r\n ####       #  #      #      #   #  #   #  ##  #  #  ##  #      #   #  ##  #  #   #  ##" +
+                              "  #      #   #     #   #  ##  #\r\n #       ####   ###    ###   # # #  #   #  #      #   #  #  ##  #####  #   #" +
+                              "  #####  #       ####   #     #   #  #\r\n #      #   #      #      #  # # #  #   #  #      #  ##  #   #  #      #" +
+                              "   #  #      #      #   #   #  #  #   #  #\r\n #       ####  ####   ####    # #    ###   #       ## #   ###    ###   " +
+                              "#   #   ###   #       ####    ##    ###   #\r\n\r\n\r\n");
             Console.WriteLine("Générateur de mot de passe");
             Console.WriteLine("==========================");
             Console.WriteLine("1. Générer un mot de passe");
