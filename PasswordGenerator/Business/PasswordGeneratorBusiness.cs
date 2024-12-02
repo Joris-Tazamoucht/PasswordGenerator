@@ -7,6 +7,9 @@ public class PasswordGeneratorBusiness
     // Liste pour stocker l'historique des mots de passe générés
     static List<string> passwordHistory = new List<string>();
 
+    /// <summary>
+    /// Main method, called for create password
+    /// </summary>
     public static void GeneratePassword()
     {
         Console.WriteLine();
@@ -41,7 +44,9 @@ public class PasswordGeneratorBusiness
         Console.ReadKey();
     }
 
-    // Afficher l'historique des mots de passe générés
+    /// <summary>
+    /// Show history of passwords created in this session
+    /// </summary>
     public static void ShowHistory()
     {
         if (passwordHistory.Count == 0)
@@ -87,7 +92,9 @@ public class PasswordGeneratorBusiness
         Console.ReadKey();
     }
 
-    // Copier un mot de passe de l'historique
+    /// <summary>
+    /// Copy password in clipboard among the generated passwords
+    /// </summary>
     public static void CopyPassword()
     {
         Console.Write("Entrez le numéro du mot de passe à copier : ");
@@ -104,7 +111,9 @@ public class PasswordGeneratorBusiness
         }
     }
 
-    // Supprimer un mot de passe de l'historique
+    /// <summary>
+    /// Delete a password among the generated passwords
+    /// </summary>
     public static void DeletePassword()
     {
         Console.Write("Entrez le numéro du mot de passe à supprimer : ");
