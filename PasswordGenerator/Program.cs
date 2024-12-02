@@ -9,6 +9,7 @@ class Program
         {
             // Menu principal
             Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(" ####                                                 #   ###                                       " +
                               "#\r\n #   #                                                #  #   #                                    " +
                               "  #\r\n #   #   ###    ###    ###   #   #   ###   # ##    ## #  #       ###   # ##    ###   # ##    ###   " +
@@ -17,6 +18,7 @@ class Program
                               "  #####  #       ####   #     #   #  #\r\n #      #   #      #      #  # # #  #   #  #      #  ##  #   #  #      #" +
                               "   #  #      #      #   #   #  #  #   #  #\r\n #       ####  ####   ####    # #    ###   #       ## #   ###    ###   " +
                               "#   #   ###   #       ####    ##    ###   #\r\n\r\n\r\n");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Générateur de mot de passe");
             Console.WriteLine("==========================");
             Console.WriteLine("1. Générer un mot de passe");
